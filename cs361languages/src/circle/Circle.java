@@ -4,7 +4,7 @@
 package circle;
 
 /**
- * @author ADD YOUR NAME
+ * @author Alexander Klisouriotis
  *
  */
 
@@ -59,8 +59,9 @@ public class Circle extends GraphicObject {
 	 * @return the Circle with this EXACT format Circle: centerX = ... centerY = ... radius = ...
 	 */
 	@Override
-	public String toString() {
-		return super.toString();
+	public String toString()
+	{
+		return "Circle: centerX = " + this.centerX + " centerY = " + this.centerY + " radius = " + this.radius;
 	}
 
 	// TODO To complete
@@ -70,17 +71,29 @@ public class Circle extends GraphicObject {
 	 * centerX, centerY and radius
 	 */
 	@Override
-	public boolean equals(Object obj) {
-		return super.equals(obj);
+	public boolean equals(Object obj)
+	{
+		if(obj instanceof Circle)
+		{
+			Circle test = (Circle) obj;
+			return ((test.centerX == centerX)&&(test.centerY == centerY)&&(test.radius == radius));
+		}
+		else
+			return false;
 	}
 
 	// TODO To complete
 	/**
 	 * @return an exact copy of the Circle that is a new instance 
 	 */
-	// @Override
-	// protected Object clone() throws CloneNotSupportedException {
-	// return super.clone();
-	// }
+	 @Override
+	 protected Object clone() throws CloneNotSupportedException
+	 {
+		 Circle fresh = new Circle();
+		 fresh.centerY = centerY;
+		 fresh.centerX = centerX;
+		 fresh.radius = radius;
+		 return fresh;
+	 }
 
 }

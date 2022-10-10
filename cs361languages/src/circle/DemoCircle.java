@@ -4,7 +4,7 @@
 package circle;
 
 /**
- * @author ADD YOUR NAME
+ * @author Alexander Klisouriotis
  *
  */
 public class DemoCircle {
@@ -12,7 +12,7 @@ public class DemoCircle {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 	
 		Circle c = new Circle();
 		c.centerX = 5.0;
@@ -57,6 +57,14 @@ public class DemoCircle {
 		// TODO print c2 with toString
 		// TODO make a deep copy of c1 with clone and assign it to c3
 		// TODO write a conditional that checks that c3.equals(c1) is true and print "c3.equals(c1) is true" or "c3.equals(c1) is false" otherwise
+			System.out.println(c1.toString());
+			System.out.println(c2.toString());
+			Circle c3 = new Circle();
+			c3 = (Circle)c1.clone();
+			if(c3.equals(c1))
+				System.out.println("c3.equals(c1) is true");
+			else
+				System.out.println("c3.equals(c1) is false");
 
 	}
 
